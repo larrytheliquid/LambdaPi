@@ -8,7 +8,6 @@ module SimplyTyped.Types where
      |  ITerm :@: CTerm
     deriving (Show{--, Eq--})
 
- 
   instance Eq ITerm where
     Ann x y == Ann x' y' = x==x' && y==y'
     Bound n1 _ == Bound n2 _ = n1==n2
@@ -16,14 +15,10 @@ module SimplyTyped.Types where
     a :@: b == a':@:b' = a==a' && b==b'
     _ == _ = False 
 
-
   data CTerm
      =  Inf  ITerm 
      |  Lam  String CTerm
     deriving (Show, Eq)
- 
-
-
 
   data Type
      =  TFree  Name

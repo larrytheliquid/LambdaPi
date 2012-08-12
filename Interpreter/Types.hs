@@ -1,8 +1,6 @@
 module Interpreter.Types where
 import Data.Map (Map)
 
-
-
 type Name  = String
 
 -- The result of an action. Or succes, or fail with a message.
@@ -20,9 +18,7 @@ data Stmt i tinf = Let String i           --  let x = t
                  | DataDecl (DataInfo tinf)
   deriving (Show)
 
-
 data DataInfo tinf = DataInfo {name :: String, sig :: tinf, ctors :: [(String,tinf)]} 
    deriving (Eq,Show)
                                                    -- Data <datatype name> <datatype dependent space>
                                                    -- mapping: Ctor-name -> type.
-
